@@ -147,3 +147,7 @@ Das semanas 10 a 14, o trabalho passa para integração completa entre app, back
 | Escalabilidade  | Preparada para múltiplos municípios sem redesenho estrutural                            |
 | Segurança       | Prevenção de reportes falsos                                                            |
 |                 |                                                                                         |
+
+**7. Diagrama de casos de usos**
+
+![Imagem de diagrama de casos de usos](../images/h-eco.webp)
