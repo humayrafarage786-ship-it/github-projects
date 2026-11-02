@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 import './routes/app_routes.dart';
+import './theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({ super.key });
+  const MyApp({super.key});
 
   @override
-    Widget build(BuildContext context) {
-      return MaterialApp.router(
-        title: 'H - ECO',
-        debugShowCheckedModeBanner: false,
-        routerConfig: AppRoutes.router,
-      );
-    }
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'H - ECO',
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoutes.router,
+      theme: AppTheme.lightTheme,
+    );
+  }
 }
