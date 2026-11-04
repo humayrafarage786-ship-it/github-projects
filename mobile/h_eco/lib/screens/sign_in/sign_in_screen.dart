@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/theme/app_colors.dart';
 import '../../widgets/common/auth_tab_switcher.dart';
 import '../../widgets/inputs/app_text_field.dart';
+import '../../widgets/buttons/primary_button.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -17,7 +18,8 @@ class _SignInScreenState extends State<SignInScreen> {
   bool obscuredPassword = true;
 
   void showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -121,7 +123,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       style: TextStyle(
                         color: AppColors.primary,
                         fontSize: 14,
-                        fontWeight: FontWeight.w600
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -130,6 +132,47 @@ class _SignInScreenState extends State<SignInScreen> {
                 const SizedBox(height: 18),
 
                 // botao entrar
+                PrimaryButton(
+                  displayText: 'Entrar',
+                  onPressed: () => {context.push('/')},
+                ),
+
+                const SizedBox(height: 18),
+
+                Row(
+                  children: [
+                    const Expanded(child: Divider(color: AppColors.border)),
+
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'ou',
+                        style: TextStyle(color: AppColors.textSecondary),
+                      ),
+                    ),
+
+                    const Expanded(child: Divider(color: AppColors.border)),
+                  ],
+                ),
+
+                const SizedBox(height: 18),
+
+                // continuar sem login
+                SizedBox(
+                  width: double.infinity,
+                  height: 56,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.white,
+                      foregroundColor: AppColors.primary,
+                    ),
+                    onPressed: () {
+                      context.push('/');
+                    },
+                    child: const Text('Continuar sem autenticar'),
+                  ),
+                ),
+                const SizedBox(height: 18),
               ],
             ),
           ),

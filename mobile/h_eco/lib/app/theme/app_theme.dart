@@ -57,10 +57,7 @@ class AppTheme {
             borderRadius: BorderRadius.circular(14),
           ),
 
-          textStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
 
@@ -70,15 +67,13 @@ class AppTheme {
 
           minimumSize: const Size(double.infinity, 50),
 
-          side: const BorderSide(
-            color: AppColors.primary,
-          ),
+          side: const BorderSide(color: AppColors.primary),
 
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14)
-          )
-        )
-      )
+            borderRadius: BorderRadius.circular(14),
+          ),
+        ),
+      ),
     );
   }
 }
