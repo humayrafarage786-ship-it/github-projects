@@ -157,3 +157,46 @@ Das semanas 10 a 14, o trabalho passa para integração completa entre app, back
 ![Imagem de DER](../images/DER.webp)
 
 ![Imagem de MER](../images/MER.webp)
+
+**9. Documentacao REST**
+
+A nossa API usa protocolo HTTP com comunicacao via JSON.
+
+**9.1 Municipios**
+* **GET/api/municipalities (admin)**
+* *Descricao:* retorna a lista de todos municipios.
+* *Resposta (200 OK):* resposta de sucesso ou uma aray vazio.
+
+<br />
+
+* **POST /api/users**
+* *Descricao:* criar conta de um novo usuario *normal*.
+* *BODY (JSON):*
+  ```json
+  {
+    "name": "humaira farage",
+    "email": "humaira@example.com",
+    "password": "1234567"
+  }
+  ```
+* *Resposta (201 Created):* Registro criado
+
+<br />
+
+* **POST /api/sessions**
+* *Descricao:* autenticar usuarios.
+* *BODY (JSON):*
+  ```json
+  {
+    "email": "humaira@example.com",
+    "password": "1234567"
+  }
+  ```
+* *Resposta (200 authenticated):* usuario autenticado
+  *  *BODY (JSON):*
+     ```json
+     {
+       "acess_tokeen": "JWT WEB TOKEEN"
+     }
+     ```
+* *Resposta (400 bad request):* email ou password invalidos.
