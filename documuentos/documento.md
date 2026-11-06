@@ -154,6 +154,6 @@ Das semanas 10 a 14, o trabalho passa para integração completa entre app, back
 
 **8. Base De Dados**
 
-![Imagem de DER ](../images/DER.webp)
+![Imagem de DER](../images/DER.webp)
 
 ![Imagem de MER](../images/MER.webp)
