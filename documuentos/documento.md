@@ -151,3 +151,9 @@ Das semanas 10 a 14, o trabalho passa para integração completa entre app, back
 **7. Diagrama de casos de usos**
 
 ![Imagem de diagrama de casos de usos](../images/h-eco.webp)
+
+**8. Base De Dados**
+
+![Imagem de DER ](../images/DER.webp)
+
+![Imagem de MER](../images/MER.webp)
