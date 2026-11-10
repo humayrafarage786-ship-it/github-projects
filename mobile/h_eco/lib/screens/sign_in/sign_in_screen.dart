@@ -172,7 +172,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     child: const Text('Continuar sem autenticar'),
                   ),
                 ),
-                const SizedBox(height: 18),
+                const SizedBox(height: 40),
               ],
             ),
           ),
