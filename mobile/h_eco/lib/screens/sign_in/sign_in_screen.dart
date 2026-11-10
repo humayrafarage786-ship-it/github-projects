@@ -187,7 +187,7 @@ class _SignInScreenState extends State<SignInScreen> {
         // botao entrar
         PrimaryButton(
           displayText: 'Entrar',
-          onPressed: () => {context.push('/')},
+          onPressed: () => {context.go('/home')},
         ),
       ],
     );
@@ -241,7 +241,12 @@ class _SignInScreenState extends State<SignInScreen> {
         // botao criar conta
         PrimaryButton(
           displayText: 'Criar conta',
-          onPressed: () => {showMessage('Conta criada, já podes entrar  no sistema.')},
+          onPressed: () {
+            setState(() {
+              selectedTab = 0;
+            });
+            showMessage('Conta criada, já podes entrar  no sistema.');
+          },
         ),
       ],
     );

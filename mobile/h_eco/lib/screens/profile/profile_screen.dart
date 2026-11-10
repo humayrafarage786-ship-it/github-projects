@@ -14,7 +14,7 @@ class ProfileScreen  extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Bem vindo (Profile)'),
+            const Text('Bem vindo (Profile) Brevemente'),
 
             const SizedBox(height: 20),
 
