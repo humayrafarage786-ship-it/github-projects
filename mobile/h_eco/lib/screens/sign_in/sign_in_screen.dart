@@ -78,64 +78,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: 24),
 
-                // email
-                const AppTextField(
-                  label: 'Email',
-                  descriptionText: 'Digite seu email',
-                  icon: Icons.email_outlined,
-                  keyboardType: TextInputType.emailAddress,
-                ),
-
-                const SizedBox(height: 18),
-
-                // password
-                AppTextField(
-                  label: 'Senha',
-                  descriptionText: 'Digite a sua senha',
-                  icon: Icons.lock_clock_outlined,
-                  obscureText: obscuredPassword,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      obscuredPassword
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        obscuredPassword = !obscuredPassword;
-                      });
-                    },
-                  ),
-                ),
-
-                const SizedBox(height: 16),
-
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: GestureDetector(
-                    onTap: () {
-                      showMessage('Recuperação de senha');
-                    },
-                    child: const Text(
-                      'Esqueceu-se da sua senha?',
-                      style: TextStyle(
-                        color: AppColors.primary,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 18),
-
-                // botao entrar
-                PrimaryButton(
-                  displayText: 'Entrar',
-                  onPressed: () => {context.push('/')},
-                ),
+                if (selectedTab == 0)
+                  _buildSignInForm()
+                else
+                  _buildCreateAccountForm(),
 
                 const SizedBox(height: 18),
 
@@ -178,6 +126,124 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSignInForm() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // email
+        const AppTextField(
+          label: 'Email',
+          descriptionText: 'Digite seu email',
+          icon: Icons.email_outlined,
+          keyboardType: TextInputType.emailAddress,
+        ),
+
+        const SizedBox(height: 18),
+
+        // password
+        AppTextField(
+          label: 'Senha',
+          descriptionText: 'Digite a sua senha',
+          icon: Icons.lock_clock_outlined,
+          obscureText: obscuredPassword,
+          suffixIcon: IconButton(
+            icon: Icon(
+              obscuredPassword
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+            ),
+            onPressed: () {
+              setState(() {
+                obscuredPassword = !obscuredPassword;
+              });
+            },
+          ),
+        ),
+
+        const SizedBox(height: 16),
+
+        Align(
+          alignment: Alignment.centerRight,
+          child: GestureDetector(
+            onTap: () {
+              showMessage('Recuperação de senha');
+            },
+            child: const Text(
+              'Esqueceu-se da sua senha?',
+              style: TextStyle(
+                color: AppColors.primary,
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 18),
+
+        // botao entrar
+        PrimaryButton(
+          displayText: 'Entrar',
+          onPressed: () => {context.push('/')},
+        ),
+      ],
+    );
+  }
+
+  Widget _buildCreateAccountForm() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // name
+        const AppTextField(
+          label: 'Nome Completo',
+          descriptionText: 'Digite seu nome',
+          icon: Icons.person_outline,
+        ),
+
+        const SizedBox(height: 18),
+
+        // email
+        const AppTextField(
+          label: 'Email',
+          descriptionText: 'Digite seu email',
+          icon: Icons.email_outlined,
+          keyboardType: TextInputType.emailAddress,
+        ),
+
+        const SizedBox(height: 18),
+
+        // password
+        AppTextField(
+          label: 'Senha',
+          descriptionText: 'Digite uma senha',
+          icon: Icons.lock_clock_outlined,
+          obscureText: obscuredPassword,
+          suffixIcon: IconButton(
+            icon: Icon(
+              obscuredPassword
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+            ),
+            onPressed: () {
+              setState(() {
+                obscuredPassword = !obscuredPassword;
+              });
+            },
+          ),
+        ),
+
+        const SizedBox(height: 20),
+
+        // botao criar conta
+        PrimaryButton(
+          displayText: 'Criar conta',
+          onPressed: () => {showMessage('Conta criada, já podes entrar  no sistema.')},
+        ),
+      ],
     );
   }
 }
